@@ -470,6 +470,8 @@ body {
 
     object-fit: cover;
 
+    object-position: center top;
+
     border-radius: 50%;
 
     border: 6px solid #8b5cf6;
