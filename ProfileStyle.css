@@ -1115,4 +1115,33 @@ body {
         min-width: 55px;
         height: 55px;
     }
+
+    /* PROJECTS MOBILE */
+
+    .projects-header {
+        padding: 3rem 1.2rem 2rem;
+    }
+
+    .projects-header h1 {
+        font-size: 2.4rem;
+    }
+
+    .projects-intro {
+        font-size: 1rem;
+    }
+
+    .projects-container {
+        padding: 1rem 1.2rem 4rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+        flex-direction: column;
+    }
+
+    .project-icon {
+        width: 55px;
+        min-width: 55px;
+        height: 55px;
+    }
 }
