@@ -14,8 +14,10 @@
 ========================= */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
+
     background-color: #f5f7ff;
+
     color: #171225;
 }
 
@@ -32,11 +34,13 @@ body {
     padding: 0.5rem 3.5rem;
 
     position: sticky;
+
     top: 0;
 
     z-index: 1000;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -86,6 +90,7 @@ body {
     justify-content: center;
 
     width: 42px;
+
     height: 42px;
 
     font-size: 2rem;
@@ -176,7 +181,7 @@ body {
 
 
 /* =========================
-   RIGHT SIDE
+   NAV ACTIONS
 ========================= */
 
 .nav-actions {
@@ -213,10 +218,16 @@ body {
 
 
 /* =========================
-   GET IN TOUCH BUTTON
+   BUTTON
 ========================= */
 
 .btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.7rem;
+
     background-color: #8b5cf6;
 
     color: white;
@@ -226,6 +237,8 @@ body {
     border-radius: 8px;
 
     text-decoration: none;
+
+    font-size: 1rem;
 
     font-weight: 600;
 
@@ -243,23 +256,334 @@ body {
 
 
 /* =========================
+   ABOUT HEADER
+========================= */
+
+.about-header {
+    max-width: 1200px;
+
+    min-height: 78vh;
+
+    margin: 0 auto;
+
+    padding: 5rem 2rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 5rem;
+}
+
+
+/* =========================
+   ABOUT TEXT
+========================= */
+
+.about-text {
+    max-width: 650px;
+}
+
+
+/* Small heading */
+
+.eyebrow {
+    color: #8b5cf6;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 1rem;
+}
+
+
+/* =========================
+   MAIN HEADING
+========================= */
+
+.about-text h1 {
+    color: #111d35;
+
+    font-size: 3.5rem;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    margin-bottom: 1rem;
+}
+
+
+/* Purple name */
+
+.about-text h1 span {
+    color: #8b5cf6;
+}
+
+
+/* =========================
+   SUBHEADING
+========================= */
+
+.about-text h2 {
+    color: #1f3356;
+
+    font-size: 1.4rem;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* =========================
+   PARAGRAPHS
+========================= */
+
+.about-text p:not(.eyebrow) {
+    color: #4b5563;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 1.2rem;
+}
+
+
+/* =========================
+   PROJECT BUTTON
+========================= */
+
+.project-btn {
+    margin-top: 1rem;
+
+    padding: 0.9rem 1.5rem;
+
+    font-size: 1rem;
+}
+
+
+.arrow {
+    font-size: 1.3rem;
+}
+
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.about-image {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 400px;
+}
+
+
+.about-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+
+    height: 360px;
+
+    background-color: #ddd6fe;
+
+    border-radius: 50%;
+
+    z-index: 0;
+}
+
+
+.about-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    background-color: #c4b5fd;
+
+    border-radius: 50%;
+
+    right: 10px;
+
+    bottom: 20px;
+
+    z-index: 0;
+}
+
+
+.about-image img {
+    position: relative;
+
+    z-index: 1;
+
+    width: 350px;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 6px solid #8b5cf6;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    width: 100%;
+
+    background-color: white;
+
+    padding: 3rem 5%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 3rem;
+}
+
+
+/* Feature */
+
+.feature {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 1.2rem;
+}
+
+
+/* Feature icon */
+
+.feature-icon {
+    min-width: 60px;
+
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: #ede9fe;
+
+    color: #7c3aed;
+
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+}
+
+
+/* Feature heading */
+
+.feature h3 {
+    color: #111d35;
+
+    font-size: 1.05rem;
+
+    margin-bottom: 0.6rem;
+}
+
+
+/* Feature paragraph */
+
+.feature p {
+    color: #64748b;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
    RESPONSIVE
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .navbar {
         padding: 0.5rem 1.5rem;
     }
 
-    .nav-links {
-        gap: 1.2rem;
+
+    .about-header {
+        gap: 3rem;
+    }
+
+
+    .about-text h1 {
+        font-size: 3rem;
+    }
+
+
+    .about-image {
+        min-width: 320px;
+    }
+
+
+    .about-image img {
+        width: 300px;
+
+        height: 300px;
+    }
+
+
+    .about-image::before {
+        width: 310px;
+
+        height: 310px;
+    }
+
+
+    .features {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 }
 
 
-@media (max-width: 700px) {
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 750px) {
 
     .nav-container {
         flex-wrap: wrap;
@@ -267,46 +591,130 @@ body {
         gap: 1rem;
     }
 
+
     .nav-links {
         order: 3;
 
         width: 100%;
 
         justify-content: center;
+
+        gap: 1.5rem;
+    }
+
+
+    .about-header {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 4rem;
+    }
+
+
+    .about-text {
+        max-width: 650px;
+    }
+
+
+    .about-image {
+        min-width: auto;
+
+        margin-top: 1rem;
+    }
+
+
+    .about-text .btn {
+        margin-left: auto;
+
+        margin-right: auto;
     }
 
 }
 
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 500px) {
 
     .navbar {
-        padding: 0.5rem 1rem;
+        padding: 0.7rem 1rem;
     }
+
 
     .logo {
         font-size: 1.2rem;
     }
 
+
     .z-logo {
         width: 36px;
+
         height: 36px;
 
         font-size: 1.7rem;
     }
 
+
     .nav-links {
         gap: 0.8rem;
     }
 
+
     .nav-links a {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
+
 
     .btn {
         padding: 0.6rem 0.8rem;
 
         font-size: 0.85rem;
+    }
+
+
+    .about-header {
+        padding: 3rem 1.2rem;
+    }
+
+
+    .about-text h1 {
+        font-size: 2.5rem;
+    }
+
+
+    .about-text h2 {
+        font-size: 1.2rem;
+    }
+
+
+    .about-text p:not(.eyebrow) {
+        font-size: 1rem;
+    }
+
+
+    .about-image img {
+        width: 250px;
+
+        height: 250px;
+    }
+
+
+    .about-image::before {
+        width: 260px;
+
+        height: 260px;
+    }
+
+
+    .features {
+        grid-template-columns: 1fr;
+
+        padding: 2rem 1.5rem;
+
+        gap: 2rem;
     }
 
 }
