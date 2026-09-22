@@ -1,1 +1,312 @@
-s
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7ff;
+    color: #171225;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+
+    background-color: #111d35;
+
+    padding: 0.5rem 3.5rem;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   NAV CONTAINER
+========================= */
+
+.nav-container {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.7rem;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* Z Logo */
+
+.z-logo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+    font-style: italic;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #c4b5fd,
+        #7c3aed
+    );
+
+    border-radius: 6px;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   NAVIGATION LINKS
+========================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 2.5rem;
+
+    list-style: none;
+}
+
+
+.nav-links a {
+    position: relative;
+
+    color: #e5e7eb;
+
+    text-decoration: none;
+
+    font-size: 1.1rem;
+
+    font-weight: 500;
+
+    padding: 0.5rem 0;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Hover */
+
+.nav-links a:hover {
+    color: #a78bfa;
+}
+
+
+/* Active */
+
+.nav-links a.active {
+    color: #a78bfa;
+}
+
+
+/* Active underline */
+
+.nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 100%;
+
+    height: 3px;
+
+    background-color: #a78bfa;
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.nav-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.2rem;
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-toggle {
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 1.3rem;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+
+/* =========================
+   GET IN TOUCH BUTTON
+========================= */
+
+.btn {
+    background-color: #8b5cf6;
+
+    color: white;
+
+    padding: 0.7rem 1.4rem;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+.btn:hover {
+    background-color: #7c3aed;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0.5rem 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        flex-wrap: wrap;
+
+        gap: 1rem;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .z-logo {
+        width: 36px;
+        height: 36px;
+
+        font-size: 1.7rem;
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.6rem 0.8rem;
+
+        font-size: 0.85rem;
+    }
+
+}
