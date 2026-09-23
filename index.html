@@ -159,17 +159,39 @@
     </main>
 
     <script>
+
     const profilePicture = document.getElementById("profilePicture");
 
+    const profilePictures = [
+        "images/suit-pic.jpg",
+        "images/profile-pic.jpg",
+        "images/hike-pic.jpg",
+        "images/wedding-pic.jpg",
+        "images/grad-pic.jpg",
+        "images/engagement-pic.jpg",
+        "images/morocco-pic.jpg"
+    ];
+
+    // Choose a random starting picture
+    let currentPicture = Math.floor(Math.random() * profilePictures.length);
+
+    // Show the random starting picture
+    profilePicture.src = profilePictures[currentPicture];
+
+    // Change picture when clicked
     profilePicture.addEventListener("click", function () {
 
-        if (profilePicture.src.includes("suit-pic.jpg")) {
-            profilePicture.src = "images/profile-pic.jpg";
-        } else {
-            profilePicture.src = "images/suit-pic.jpg";
+        currentPicture++;
+
+        // Go back to the beginning after the last picture
+        if (currentPicture >= profilePictures.length) {
+            currentPicture = 0;
         }
 
+        profilePicture.src = profilePictures[currentPicture];
+
     });
+
 </script>
 
 </body>
