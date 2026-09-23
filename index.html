@@ -162,33 +162,68 @@
 
     const profilePicture = document.getElementById("profilePicture");
 
-    const profilePictures = [
-        "images/suit-pic.jpg",
-        "images/profile-pic.jpg",
-        "images/hike-pic.jpg",
-        "images/wedding-pic.jpg",
-        "images/grad-pic.jpg",
-        "images/engagement-pic.jpg",
-        "images/morocco-pic.jpg"
+    const pictures = [
+        {
+            file: "suit-pic.jpg",
+            className: "suit-picture"
+        },
+        {
+            file: "profile-pic.jpg",
+            className: "profile-picture"
+        },
+        {
+            file: "hike-pic.jpg",
+            className: "hike-picture"
+        },
+        {
+            file: "wedding-pic.jpg",
+            className: "wedding-picture"
+        },
+        {
+            file: "grad-pic.jpg",
+            className: "grad-picture"
+        },
+        {
+            file: "engagement-pic.jpg",
+            className: "engagement-picture"
+        },
+        {
+            file: "morocco-pic.jpg",
+            className: "morocco-picture"
+        }
     ];
 
-    // Choose a random starting picture
-    let currentPicture = Math.floor(Math.random() * profilePictures.length);
+    // Pick a random starting picture
+    let currentPicture = Math.floor(Math.random() * pictures.length);
 
-    // Show the random starting picture
-    profilePicture.src = profilePictures[currentPicture];
+    function changePicture() {
+
+        const picture = pictures[currentPicture];
+
+        profilePicture.src = "images/" + picture.file;
+
+        // Remove all picture-position classes
+        pictures.forEach(function (picture) {
+            profilePicture.classList.remove(picture.className);
+        });
+
+        // Add the correct position class
+        profilePicture.classList.add(picture.className);
+    }
+
+    // Set the random starting picture
+    changePicture();
 
     // Change picture when clicked
     profilePicture.addEventListener("click", function () {
 
         currentPicture++;
 
-        // Go back to the beginning after the last picture
-        if (currentPicture >= profilePictures.length) {
+        if (currentPicture >= pictures.length) {
             currentPicture = 0;
         }
 
-        profilePicture.src = profilePictures[currentPicture];
+        changePicture();
 
     });
 

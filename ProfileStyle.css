@@ -487,6 +487,49 @@ body {
         0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* =========================
+   PROFILE PICTURE POSITIONS
+========================= */
+
+.index-image img {
+    object-fit: cover;
+}
+
+/* Suit picture */
+.index-image img.suit-picture {
+    object-position: center top;
+}
+
+/* Graduation picture */
+.index-image img.grad-picture {
+    object-position: center 35%;
+}
+
+/* Hiking picture */
+.index-image img.hike-picture {
+    object-position: center center;
+}
+
+/* Wedding picture */
+.index-image img.wedding-picture {
+    object-position: center 20%;
+}
+
+/* Engagement picture */
+.index-image img.engagement-picture {
+    object-position: center 25%;
+}
+
+/* Morocco picture */
+.index-image img.morocco-picture {
+    object-position: center 25%;
+}
+
+/* Profile picture */
+.index-image img.profile-picture {
+    object-position: center center;
+}
+
 
 /* =========================
    FEATURES
