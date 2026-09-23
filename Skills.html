@@ -7,7 +7,8 @@
 
     <title>Skills | ZuhaibHussain</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="ProfileStyle.css">
 </head>
@@ -25,6 +26,7 @@
 
         <!-- Navigation links -->
         <ul class="nav-links">
+
             <li>
                 <a href="index.html">Home</a>
             </li>
@@ -36,10 +38,15 @@
             <li>
                 <a href="Skills.html" class="active">Skills</a>
             </li>
+
         </ul>
 
         <div class="nav-actions">
-            <a href="https://www.linkedin.com/in/zuhaib-hussain-923588202" target="_blank" class="btn">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/zuhaib-hussain-923588202"
+                target="_blank"
+                class="btn">
+                LinkedIn
+            </a>
         </div>
 
     </div>
@@ -68,6 +75,14 @@
             university, projects and practical training.
         </p>
 
+        <button id="unlockSkillsBtn" class="unlock-btn">
+            🔓 Unlock My Skills
+        </button>
+
+        <p id="skillMessage" class="skill-message">
+            Click to unlock my skills.
+        </p>
+
     </section>
 
 
@@ -77,8 +92,9 @@
 
     <section class="skills-container">
 
+
         <!-- Cybersecurity -->
-        <div class="skill-card">
+        <div class="skill-card unlockable-skill">
 
             <div class="skill-icon">
                 🛡
@@ -114,7 +130,7 @@
 
 
         <!-- Programming -->
-        <div class="skill-card">
+        <div class="skill-card unlockable-skill">
 
             <div class="skill-icon">
                 &lt;/&gt;
@@ -152,7 +168,7 @@
 
 
         <!-- Test Automation -->
-        <div class="skill-card">
+        <div class="skill-card unlockable-skill">
 
             <div class="skill-icon">
                 ✓
@@ -188,7 +204,7 @@
 
 
         <!-- Tools & Technologies -->
-        <div class="skill-card">
+        <div class="skill-card unlockable-skill">
 
             <div class="skill-icon">
                 ⚙
@@ -223,9 +239,122 @@
 
         </div>
 
+
+        <!-- Agile / Project Management -->
+        <div class="skill-card unlockable-skill">
+
+            <div class="skill-icon">
+                📋
+            </div>
+
+            <div class="skill-content">
+
+                <p class="skill-type">
+                    PROJECT MANAGEMENT
+                </p>
+
+                <h2>
+                    Agile & Project Management
+                </h2>
+
+                <p>
+                    Understanding of Agile, Scrum and Waterfall
+                    project management methodologies developed
+                    through university, software development and
+                    practical training.
+                </p>
+
+                <div class="skill-tags">
+                    <span>Agile</span>
+                    <span>Scrum</span>
+                    <span>Waterfall</span>
+                    <span>Project Management</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Communication & Teamwork -->
+        <div class="skill-card unlockable-skill">
+
+            <div class="skill-icon">
+                🤝
+            </div>
+
+            <div class="skill-content">
+
+                <p class="skill-type">
+                    PROFESSIONAL SKILLS
+                </p>
+
+                <h2>
+                    Communication & Teamwork
+                </h2>
+
+                <p>
+                    Strong communication and teamwork skills developed
+                    through software development, university projects
+                    and previous professional experience.
+                </p>
+
+                <div class="skill-tags">
+                    <span>Communication</span>
+                    <span>Teamwork</span>
+                    <span>Collaboration</span>
+                    <span>Problem Solving</span>
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
 </main>
+
+
+<!-- =========================
+     UNLOCK SKILLS JAVASCRIPT
+========================== -->
+
+<script>
+
+    const unlockSkillsBtn = document.getElementById("unlockSkillsBtn");
+    const skillMessage = document.getElementById("skillMessage");
+    const skills = document.querySelectorAll(".unlockable-skill");
+
+    let currentSkill = 0;
+
+    unlockSkillsBtn.addEventListener("click", function () {
+
+        if (currentSkill < skills.length) {
+
+            skills[currentSkill].classList.add("unlocked");
+
+            currentSkill++;
+
+            if (currentSkill < skills.length) {
+
+                skillMessage.textContent =
+                    `${skills.length - currentSkill} skills remaining...`;
+
+            } else {
+
+                skillMessage.textContent =
+                    "🎉 All skills unlocked!";
+
+                unlockSkillsBtn.textContent =
+                    "✓ All Skills Unlocked";
+
+                unlockSkillsBtn.disabled = true;
+            }
+        }
+
+    });
+
+</script>
 
 </body>
 

@@ -81,10 +81,7 @@
 
             <!-- RIGHT SIDE -->
             <div class="index-image">
-                <img
-                    src="images/suit-pic.jpg"
-                    alt="Profile picture of Zuhaib"
-                >
+                <img id="profilePicture" src="images/suit-pic.jpg" alt="Profile picture of Zuhaib">
             </div>
         </section>
 
@@ -160,6 +157,20 @@
             </div>
         </section>
     </main>
+
+    <script>
+    const profilePicture = document.getElementById("profilePicture");
+
+    profilePicture.addEventListener("click", function () {
+
+        if (profilePicture.src.includes("suit-pic.jpg")) {
+            profilePicture.src = "images/profile-pic.jpg";
+        } else {
+            profilePicture.src = "images/suit-pic.jpg";
+        }
+
+    });
+</script>
 
 </body>
 

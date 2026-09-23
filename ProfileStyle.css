@@ -8,6 +8,12 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
+
 /* =========================
    BODY
 ========================= */
@@ -705,34 +711,34 @@ body {
     }
 
 
-    .home-header {
+    .index-header {
         padding: 3rem 1.2rem;
     }
 
 
-    .home-text h1 {
+    .index-text h1 {
         font-size: 2.5rem;
     }
 
 
-    .home-text h2 {
+    .index-text h2 {
         font-size: 1.2rem;
     }
 
 
-    .home-text p:not(.eyebrow) {
+    .index-text p:not(.eyebrow) {
         font-size: 1rem;
     }
 
 
-    .home-image img {
+    .index-image img {
         width: 250px;
 
         height: 250px;
     }
 
 
-    .home-image::before {
+    .index-image::before {
         width: 260px;
 
         height: 260px;
@@ -823,6 +829,161 @@ body {
     border-color: #c4b5fd;
 }
 
+/* =========================
+   PROJECT PAGE ANIMATION
+========================= */
+
+.project-animate {
+    opacity: 0;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+
+/* First project - comes from the left */
+.project-animate:nth-child(1) {
+    animation-name: projectFromLeft;
+    animation-delay: 0.1s;
+}
+
+
+/* Second project - comes from the right */
+.project-animate:nth-child(2) {
+    animation-name: projectFromRight;
+    animation-delay: 0.25s;
+}
+
+
+/* Third project - comes from the top */
+.project-animate:nth-child(3) {
+    animation-name: projectFromTop;
+    animation-delay: 0.4s;
+}
+
+
+/* Fourth project - comes from the bottom */
+.project-animate:nth-child(4) {
+    animation-name: projectFromBottom;
+    animation-delay: 0.55s;
+}
+
+
+/* Fifth project - comes from the left */
+.project-animate:nth-child(5) {
+    animation-name: projectFromLeft;
+    animation-delay: 0.7s;
+}
+
+
+/* Sixth project - comes from the right */
+.project-animate:nth-child(6) {
+    animation-name: projectFromRight;
+    animation-delay: 0.85s;
+}
+
+
+/* Seventh project - comes from the bottom */
+.project-animate:nth-child(7) {
+    animation-name: projectFromBottom;
+    animation-delay: 1s;
+}
+
+
+/* =========================
+   ANIMATION PATHS
+========================= */
+
+@keyframes projectFromLeft {
+
+    0% {
+        opacity: 0;
+        transform: translate(-100vw, 50vh) rotate(-12deg) scale(0.7);
+    }
+
+    45% {
+        opacity: 1;
+        transform: translate(20vw, -20vh) rotate(8deg) scale(1.05);
+    }
+
+    70% {
+        transform: translate(-8vw, 8vh) rotate(-4deg) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+
+@keyframes projectFromRight {
+
+    0% {
+        opacity: 0;
+        transform: translate(100vw, -40vh) rotate(12deg) scale(0.7);
+    }
+
+    45% {
+        opacity: 1;
+        transform: translate(-20vw, 20vh) rotate(-8deg) scale(1.05);
+    }
+
+    70% {
+        transform: translate(8vw, -8vh) rotate(4deg) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+
+@keyframes projectFromTop {
+
+    0% {
+        opacity: 0;
+        transform: translate(20vw, -100vh) rotate(10deg) scale(0.7);
+    }
+
+    45% {
+        opacity: 1;
+        transform: translate(-15vw, 25vh) rotate(-7deg) scale(1.05);
+    }
+
+    70% {
+        transform: translate(5vw, -8vh) rotate(3deg) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+
+@keyframes projectFromBottom {
+
+    0% {
+        opacity: 0;
+        transform: translate(-15vw, 100vh) rotate(-10deg) scale(0.7);
+    }
+
+    45% {
+        opacity: 1;
+        transform: translate(15vw, -25vh) rotate(7deg) scale(1.05);
+    }
+
+    70% {
+        transform: translate(-5vw, 8vh) rotate(-3deg) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
 
 /* Project Icon */
 
@@ -1146,4 +1307,182 @@ body {
         min-width: 55px;
         height: 55px;
     }
+}
+
+/* =========================
+   UNLOCK MY SKILLS BUTTON
+========================= */
+
+.unlock-btn {
+    position: relative;
+
+    margin-top: 1.5rem;
+
+    border: none;
+    background-color: #8b5cf6;
+    color: white;
+
+    padding: 0.9rem 1.5rem;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.15),
+        0 0 15px rgba(139, 92, 246, 0.5),
+        0 0 30px rgba(139, 92, 246, 0.25);
+
+    animation: unlockGlow 2s ease-in-out infinite;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   OUTER GLOWING LAYER
+========================= */
+
+.unlock-btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+
+    border-radius: 12px;
+
+    border: 2px solid rgba(139, 92, 246, 0.5);
+
+    opacity: 0.8;
+
+    animation: unlockOuterGlow 2s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.unlock-btn:hover {
+    background-color: #7c3aed;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 0 4px rgba(139, 92, 246, 0.2),
+        0 0 25px rgba(139, 92, 246, 0.8),
+        0 0 50px rgba(139, 92, 246, 0.4);
+}
+
+
+/* =========================
+   MAIN GLOW ANIMATION
+========================= */
+
+@keyframes unlockGlow {
+
+    0% {
+        box-shadow:
+            0 0 0 3px rgba(139, 92, 246, 0.15),
+            0 0 15px rgba(139, 92, 246, 0.5),
+            0 0 30px rgba(139, 92, 246, 0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 5px rgba(139, 92, 246, 0.25),
+            0 0 25px rgba(139, 92, 246, 0.8),
+            0 0 45px rgba(139, 92, 246, 0.45);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 3px rgba(139, 92, 246, 0.15),
+            0 0 15px rgba(139, 92, 246, 0.5),
+            0 0 30px rgba(139, 92, 246, 0.25);
+    }
+
+}
+
+
+/* =========================
+   OUTER LAYER ANIMATION
+========================= */
+
+@keyframes unlockOuterGlow {
+
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+}
+
+
+/* =========================
+   DISABLED STATE
+========================= */
+
+.unlock-btn:disabled {
+    background-color: #9ca3af;
+
+    cursor: default;
+
+    transform: none;
+
+    animation: none;
+
+    box-shadow: none;
+}
+
+
+/* Remove outer glow when disabled */
+
+.unlock-btn:disabled::before {
+    animation: none;
+    opacity: 0;
+}
+
+.skills-container .unlockable-skill {
+    opacity: 0 !important;
+    visibility: hidden;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(8px);
+    pointer-events: none;
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        filter 0.7s ease,
+        visibility 0.7s ease;
+}
+
+.skills-container .unlockable-skill.unlocked {
+    opacity: 1 !important;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    pointer-events: auto;
 }
